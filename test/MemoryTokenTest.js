@@ -32,4 +32,17 @@ contract('Memory Token', (accounts) => {
         }) 
     })
 
+    describe('token distribuition', async () =>{
+        let result 
+
+        it('mints tokens', async () =>{
+            await token.mint(accounts[0], 'https://www.token-uri.com/nft')
+        //it should increase the total supply
+
+        result = await token.totalSupply()
+        assert.equal(result.toString(), '1', 'total supply is correct')
+
+        })
+    })
+
 })
